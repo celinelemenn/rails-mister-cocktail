@@ -1,0 +1,34 @@
+
+
+<div class="">
+
+
+  <div class="card-category">
+
+  <h1><%= @cocktail.name %></h1>
+  </div>
+
+
+  <ul class="list-group bg-white p-3">
+    <h3 class="my-3"> my doses </h3>
+
+    <%= "you do not have any ingredient yet for this cocktail. Add one below" if @doses.empty?  %>
+
+    <% @doses.each do |dose| %>
+    <li class="list-group-item my-2 d-flex align-items-center">
+      <div class="flex-grow-1">
+      <%= dose.ingredient.name %>: <%= dose.description %>
+      </div>
+      <div>
+      <%= link_to "delete this dose", cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-warning" %>
+      </div>
+    </li>
+
+    <% end %>
+    <p class="my-3"> <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %> </p>
+  </ul>
+
+  <p class="my-3"> <%= link_to "back to all cocktail", cocktails_path, class: "btn btn-secondary" %></p>
+
+
+</div>
