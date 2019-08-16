@@ -19,7 +19,7 @@ url3 = "https://705628.smushcdn.com/1130679/wp-content/uploads/2019/05/20rustic-
 url4 = "https://www.thespruceeats.com/thmb/VUIEfKs1iqGuO9FHqY4eYzPg6Ks=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/NavyGrogCocktail-565092779-577437e33df78cb62c3c37fd.jpg"
 url5 = "https://cocktailcollective.com.au/wp-content/uploads/2018/10/Surprise-Sour-565x565.jpg"
 
-cocktail1 = Cocktail.new(name: "Mochito")
+cocktail1 = Cocktail.new(name: "Modito")
 cocktail1.remote_photo_url = url1
 cocktail1.save
 
