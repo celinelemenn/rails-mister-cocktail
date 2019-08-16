@@ -1,15 +1,24 @@
-<div class="container col-6 mt-5">
 
-<h1>Add a new cocktail</h1>
+ <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+         url('http://resources.mynewsdesk.com/image/upload/c_limit,dpr_1.0,f_auto,h_700,q_auto,w_700/yecfokigclzw9uwktkvt.jpg')">
+</div>
+
+
+<div class="container col-6">
+
+<h1 class="my-3">Create your own cocktail</h1>
 
 <%= simple_form_for(@cocktail) do |f| %>
-
-<%= f.input :name %>
-<%= f.input :photo %>
+<div class="label">
+<%= f.input :name%>
+</div>
+<div class="label">
+<%= f.input :photo, :label => "Add your own picture"%>
 <%= f.input :photo_cache, as: :hidden %>
+</div>
 
-<%= f.submit "add cocktail", class: "btn btn-primary" %>
+<%= f.submit "Add cocktail", class: "btn btn-primary mt-2" %>
 <% end %>
 
-<p class="my-3"><%= link_to "back to all cocktails", cocktails_path, class: "btn btn-secondary" %></p>
+<p class="mt-5"><%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-light" %></p>
 </div>

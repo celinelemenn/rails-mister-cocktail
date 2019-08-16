@@ -1,6 +1,8 @@
 .cards {
+  // display: flex;
+  // justify-content: space-between;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 25px;
   padding: 12px;
 
@@ -9,7 +11,7 @@
 .card {
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 250px;
   min-width: 120px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -19,38 +21,18 @@
   font-size: 22px;
   color: white;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
-
-padding: 20px;
-background: rgba(0,0,0,0.4);
-box-shadow: 0 0 15px rgba(0,0,0,0.2);
-height: 120px;
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  a:hover {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-
-}
-
-.card-category {
-  height: 50vh;
-  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('cocktails.jpg') ;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  padding: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
 
-  h1 {
-    font-size: 5.5rem;
-  }
 }
+
+

@@ -1,34 +1,43 @@
-
-
 <div class="">
 
 
-  <div class="card-category" >
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+  url('<%= cl_image_path @cocktail.photo %>')">
 
-  <h1><%= @cocktail.name %></h1>
+    <h1><%= @cocktail.name %></h1>
   </div>
 
+<div class="d-flex justify-content-around">
 
-  <ul class="list-group bg-white p-3">
-    <h3 class="my-3"> my doses </h3>
+  <div class="p-3">
+
+    <h3 class="my-3"> Ingredients</h3>
 
     <%= "you do not have any ingredient yet for this cocktail. Add one below" if @doses.empty?  %>
 
     <% @doses.each do |dose| %>
-    <li class="list-group-item my-2 d-flex align-items-center">
-      <div class="flex-grow-1">
-      <%= dose.ingredient.name %>: <%= dose.description %>
+    <div class=" my-2">
+      <div class="">
+        <strong> <%= dose.ingredient.name %></strong> - <%= dose.description %>
+        <%= link_to "(delete)", cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "are you sure?"}, class: "" %>
       </div>
-      <div>
-      <%= link_to "delete this dose", cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-warning" %>
-      </div>
-    </li>
+    </div>
 
     <% end %>
     <p class="my-3"> <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %> </p>
-  </ul>
 
-  <p class="my-3"> <%= link_to "back to all cocktail", cocktails_path, class: "btn btn-secondary" %></p>
+    <p class="my-3"> <%= link_to "back to all cocktail", cocktails_path, class: "btn btn-secondary" %></p>
+  </div>
 
+  <div class="my-2">
+    <h3>Add an ingredient to <%= @cocktail.name %></h3>
 
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :description %>
+    <%= f.submit "add ingredient", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>
 </div>

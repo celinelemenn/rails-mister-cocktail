@@ -1,5 +1,10 @@
+
+ <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+         url('<%= @cocktail.photo %>')">
+</div>
+
 <div class="container col-6 mt-5">
-<h1>Add a dose to <%= @cocktail.name %> cocktail</h1>
+<h1>Add an ingredient to <%= @cocktail.name %></h1>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
 <%= f.association :ingredient %>
